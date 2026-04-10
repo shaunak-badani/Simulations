@@ -1,0 +1,8 @@
+tolerance 10.0
+filetype pdb
+output prep_files/argon.pdb
+
+structure argon.pdb
+  number 4000
+  inside box 0 0 620 110.1 110.1 1120
+end structure

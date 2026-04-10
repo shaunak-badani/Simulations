@@ -1,0 +1,8 @@
+#include "ffbonded.itp"
+#include "argon.itp"
+
+[ system ]
+Liquid Argon
+
+[ molecules ]
+AR   4000
