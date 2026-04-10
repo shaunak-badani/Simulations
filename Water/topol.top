@@ -1,0 +1,9 @@
+; topol.top
+#include "oplsaa.ff/forcefield.itp"   ; or use amber/charmm if preferred
+#include "oplsaa.ff/spce.itp"
+
+[ system ]
+Water box
+
+[ molecules ]
+SOL   5000      ; replace <N> with the number of water molecules

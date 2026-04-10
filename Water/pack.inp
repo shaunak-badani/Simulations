@@ -1,0 +1,9 @@
+tolerance 1.0
+filetype pdb
+radius 1.5
+output prep_files/water.pdb
+
+structure water.pdb
+  number 5000
+  inside box 0 0 0 50 50 150
+end structure

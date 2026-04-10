@@ -1,0 +1,19 @@
+; em.mdp
+integrator      = steep
+nsteps          = 10000
+emtol           = 100.0
+
+pbc             = xyz
+
+cutoff-scheme    = Verlet
+coulombtype      = PME
+rcoulomb         = 1       ; no electrostatics
+ewald-rtol       = 0.00031066034263919066 ; corresponds to beta = 0.255
+vdw-type         = PME
+rvdw             = 1
+fourier-nx	 = 24
+fourier-ny	 = 24
+fourier-nz	 = 54
+pme-order	 = 5
+ewald-rtol-lj = 0.015578586212035261 ; corresponds to beta = 0.28
+DispCorr	  = no

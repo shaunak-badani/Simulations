@@ -1,0 +1,30 @@
+integrator   = md-vv
+nsteps       = 100000
+dt           = 0.005
+
+cutoff-scheme    = Verlet
+coulombtype      = PME
+rcoulomb         = 1       ; no electrostatics
+ewald-rtol       = 0.00031066034263919066 ; corresponds to beta = 0.255
+vdw-type         = PME
+rvdw             = 1
+fourier-nx	 = 24
+fourier-ny	 = 24
+fourier-nz	 = 54
+pme-order	 = 5
+ewald-rtol-lj = 0.015578586212035261 ; corresponds to beta = 0.28
+DispCorr	  = no
+
+
+tcoupl   = nose-hoover
+tc-grps  = System
+tau-t    = 0.1
+ref-t    = 300             ; T = 300
+
+gen-vel  = yes
+gen-temp = 300
+
+nstxout = 10000
+nstvout = 10000
+nstfout = 10000
+nstenergy = 100
