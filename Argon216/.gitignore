@@ -1,0 +1,13 @@
+!spc216.gro
+!em*.mdp
+!nvt.mdp
+
+*.edr
+*.trr
+*.log
+*.xvg
+*.traj
+*.xtc
+!LJ.mdp
+__pycache__
+*.tar.gz

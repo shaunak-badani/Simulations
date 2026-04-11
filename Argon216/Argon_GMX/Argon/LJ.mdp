@@ -1,0 +1,86 @@
+; LJ run input file
+; (Note: uses real MD units and NOT reduced LJ units)
+
+; RUN CONTROL PARAMETERS
+integrator               = md
+; Start time and timestep in ps
+tinit                    = 0
+dt                       = 0.01
+nsteps                   = 25000
+
+; mode for center of mass motion removal
+comm-mode                = Linear
+; number of steps for center of mass motion removal
+nstcomm                  = 1
+; group(s) for center of mass motion removal
+comm-grps                = 
+
+
+; OUTPUT CONTROL OPTIONS
+; Output frequency for coords (x), velocities (v) and forces (f)
+nstxout                  = 0
+nstvout                  = 0
+nstfout                  = 0
+; Checkpointing helps you continue after crashes
+nstcheckpoint            = 1000
+; Output frequency for energies to log file and energy file
+nstlog                   = 100
+nstenergy                = 100
+; Output frequency and precision for xtc file
+nstxtcout                = 100
+xtc-precision            = 1000
+
+
+; NEIGHBORSEARCHING PARAMETERS
+; nblist update frequency
+nstlist                  = 1
+; ns algorithm (simple or grid)
+ns-type                  = grid
+; Periodic boundary conditions: xyz (default), no (vacuum)
+; or full (infinite systems only)
+pbc                      = xyz
+; nblist cut-off        
+rlist                    = 1.2
+
+
+; OPTIONS FOR ELECTROSTATICS AND VDW
+; Method for doing electrostatics
+coulombtype              = Cut-off
+rcoulomb-switch          = 0
+; cutoff 3*sigma = 3*0.34nm = 1.2nm
+rcoulomb                 = 1.2
+; Dielectric constant (DC) for cut-off or DC of reaction field
+epsilon-r                = 1
+; Method for doing Van der Waals
+vdw-type                 = Cut-off
+; cut-off lengths       
+rvdw-switch              = 0
+rvdw                     = 1.2
+; Apply long range dispersion corrections for Energy and Pressure
+DispCorr                 = EnerPres
+
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS
+; Temperature coupling  
+tcoupl                   = No
+; Groups to couple separately
+tc-grps                  = system
+; Time constant (ps) and reference temperature (K)
+tau-t                    = 0.1
+ref-t                    = 94.4
+
+; Pressure coupling     
+Pcoupl                   = No
+Pcoupltype               = Isotropic
+; Time constant (ps), compressibility (1/bar) and reference P (bar)
+tau-p                    = 1
+compressibility          = 5e-5
+ref-p                    = 1
+
+
+; GENERATE VELOCITIES FOR STARTUP RUN
+gen-vel                  = yes
+gen-temp                 = 94.4
+;;gen-temp                 = 120.0
+gen-seed                 = 173529
+
